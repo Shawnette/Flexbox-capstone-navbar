@@ -4,134 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Flexbox Capstone Project</title>
+    <title>Flexbox Capstone Project Navigation Bar</title>
     
     <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/abc6dc16ec.js"></script>
-   
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+    crossorigin="anonymous"></script>
     
     <style>
 
         html {
-            font-family: 'Oxygen', sans-serif;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
         body {
             margin: 0px;
         }   
 
-        .navigation-bar {
-            background: #415068;
+        .navigationBar {
+            background: lightcoral;
         }
 
-        .navigation-bar div {
+        .navigationBar div {
             display:none;
 
         }
 
-        .navigation-bar .toggle,
-        .navigation-bar .brand {
+        .navigationBar .toggle,
+        .navigationBar .myPage {
             display: inline-block;
         }
 
-        .navigation-bar .link {
+        .navigationBar .link1 , .link2, .link3 {
             display: block;
             text-align: center;
             padding: 1em;
             text-decoration: none;
-            background: #223047;
-            color: white; 
+            background: dodgerblue;
+            color: black; 
         }
 
-        .navigation-bar .link:hover,
-        .navigation-bar .link:active {
-            color: #223047;
+        .navigationBar .link1:hover,
+        .navigationBar .link1:active {
+            color: slateblue;
             background: white;
         }
-        .navigation-bar .brand {
+
+        .navigationBar .link2:hover,
+        .navigationBar .link2:active {
+            color: slateblue;
+            background: white;
+        }
+        .navigationBar .link3:hover,
+        .navigationBar .link3:active {
+            color: slateblue;
+            background: white;
+        }
+        .navigationBar .MyPage {
             width: 10em;
             text-align: center;
             padding: 1em;
-            color:white;
+            color:black;
         }
 
-        .navigation-bar a {
+        .navigationBar a {
             text-decoration: none;
         }
-        .navigation-bar .toggle {
+        .navigationBar .toggle {
             padding: 1em;
             color: black;
         }
 
         @media (min-width: 48em) {
-            .navigation-bar {
+            .navigationBar {
                 display:flex;
         }
         
-        .navigation-bar .left,
-        .navigation-bar .right {
+        
+        .navigationBar .left,
+        .navigationBar .right,
+        .navigationBar .center {
             display: flex;
             flex: 1;
         }
-
-        .navigation-bar .link {
+        .navigationBar .link1, .link2, .link3 {
             width: auto;
         }
-
-        .navigation-bar .right {
+        
+        .navigationBar .right {
             justify-content: flex-end;
         }
 
-        .navigation-bar .toggle {   
+        .navigationBar .toggle {   
             display: none;
-
+            }
         }
 
         @media (min-width: 48em) {
-            .navigation-bar div {
+            .navigationBar div {
                 display: flex;
             }
         }
 
         @media (max-width: 48em) {
-        .navigation-bar.active .toggle {
-            background: #223047;
+        .navigationBar.active .toggle {
+            background: slateblue;
             color: white;
-        }
-    }
-
-        .navigation-bar .brand {
+            }
+        
+        .navigationBar .MyPage {
             text-align: left;
         }
 
-        .navigation-bar .active div {
+        .navigationBar.active div {
             display: block;
+        } 
             }
-        }
+        
     </style>
 </head>
 <body>
 
-    <div class="navigation-bar"> 
-        <a href="#" class="toggle" id="navhamburger">
+    <div class="navigationBar"> 
+        <a href="#" class="toggle" id="navIcon">
             <i class="fas fa-bars"></i>
         </a>
-       <a href="#" class="brand">Shawnette Johnson</a>    
+       <a href="#" class="MyPage">Shawnette Johnson</a>    
 
         <div class="left">
-            <a href="#" class="link">Link 1</a> 
-            <a href="#" class="link">Link 2</a> 
-        </div>   
-
+            <a href="#" class="link1">Introduction</a> 
+            <a href="#" class="link2">Portolio</a> 
+        </div>
+        
+        <div class="center">
+            <h3>Welcome To My World! Enjoy Your Visit!</h3>
+        </div>  
+        
         <div class="right">
-          <a href="#" class="link">Link 3</a> 
+          <a href="#" class="link3">About Me</a> 
        </div>
    </div>
    
 </body>
 <script>
-    const navHamburger = document.querySelector('#navHamburger');
-    navHamburger.addEventListener('click', (e) => {
-        navHamburger.parentElement.classList.toggle('active');
+    const navIcon = document.querySelector('#navIcon');
+    navIcon.addEventListener('click', (e) => {
+        navIcon.parentElement.classList.toggle('active');
     })
 </script>
 </html>
